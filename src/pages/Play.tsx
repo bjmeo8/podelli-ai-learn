@@ -11,7 +11,7 @@ const Play = () => {
       title: "Word Match",
       description: "Match words with their translations",
       icon: Zap,
-      color: "bg-yellow-100",
+      colorClass: "bg-[hsl(48,96%,53%)]",
       points: 250,
     },
     {
@@ -19,7 +19,7 @@ const Play = () => {
       title: "Story Builder",
       description: "Create sentences from vocabulary",
       icon: Star,
-      color: "bg-purple-100",
+      colorClass: "bg-[hsl(271,76%,53%)]",
       points: 500,
     },
     {
@@ -27,7 +27,7 @@ const Play = () => {
       title: "Speed Challenge",
       description: "Race against time to answer",
       icon: Trophy,
-      color: "bg-green-100",
+      colorClass: "bg-[hsl(142,76%,36%)]",
       points: 1000,
     },
   ];
@@ -101,9 +101,9 @@ const Play = () => {
               >
                 <div className="flex items-center gap-4">
                   <div
-                    className={`w-16 h-16 rounded-2xl ${game.color} flex items-center justify-center flex-shrink-0`}
+                    className={`w-16 h-16 rounded-2xl ${game.colorClass} flex items-center justify-center flex-shrink-0`}
                   >
-                    <game.icon className="h-8 w-8 text-foreground/60" />
+                    <game.icon className="h-8 w-8 text-white/90" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold mb-1">{game.title}</h4>

@@ -12,7 +12,7 @@ const Pode = () => {
       level: "Beginner",
       duration: "15 min",
       lessons: 12,
-      color: "bg-orange-100",
+      colorClass: "bg-[hsl(25,95%,53%)]",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Pode = () => {
       level: "Intermediate",
       duration: "20 min",
       lessons: 8,
-      color: "bg-blue-100",
+      colorClass: "bg-[hsl(217,91%,60%)]",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const Pode = () => {
       level: "Advanced",
       duration: "25 min",
       lessons: 15,
-      color: "bg-pink-100",
+      colorClass: "bg-[hsl(330,81%,60%)]",
     },
   ];
 
@@ -79,31 +79,33 @@ const Pode = () => {
             {podcasts.map((podcast, index) => (
               <Card
                 key={podcast.id}
-                className="p-5 rounded-3xl border-2 hover:shadow-medium transition-smooth animate-scale-in"
+                className="p-4 sm:p-5 rounded-3xl border-2 hover:shadow-medium transition-smooth animate-scale-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                   <div
-                    className={`w-16 h-16 rounded-2xl ${podcast.color} flex items-center justify-center flex-shrink-0`}
+                    className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl ${podcast.colorClass} flex items-center justify-center flex-shrink-0`}
                   >
-                    <Headphones className="h-8 w-8 text-foreground/60" />
+                    <Headphones className="h-7 w-7 sm:h-8 sm:w-8 text-white/90" />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold mb-1">{podcast.title}</h4>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span className="px-2 py-0.5 bg-secondary rounded-full text-xs font-medium">
+                  <div className="flex-1 min-w-0 w-full sm:w-auto">
+                    <h4 className="font-bold mb-2 text-base sm:text-lg">
+                      {podcast.title}
+                    </h4>
+                    <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                      <span className="px-2 py-1 bg-secondary rounded-full text-xs font-medium whitespace-nowrap">
                         {podcast.level}
                       </span>
-                      <span>•</span>
-                      <span>{podcast.duration}</span>
-                      <span>•</span>
-                      <span>{podcast.lessons} lessons</span>
+                      <span className="hidden sm:inline">•</span>
+                      <span className="whitespace-nowrap">{podcast.duration}</span>
+                      <span className="hidden sm:inline">•</span>
+                      <span className="whitespace-nowrap">{podcast.lessons} lessons</span>
                     </div>
                   </div>
                   <Button
                     size="icon"
                     variant="ghost"
-                    className="rounded-full h-10 w-10 flex-shrink-0"
+                    className="rounded-full h-10 w-10 flex-shrink-0 self-end sm:self-center"
                   >
                     <Play className="h-5 w-5" />
                   </Button>
