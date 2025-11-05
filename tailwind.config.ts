@@ -42,6 +42,15 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        brand: {
+          orange: "hsl(var(--color-orange))",
+          yellow: "hsl(var(--color-yellow))",
+          pink: "hsl(var(--color-pink))",
+          purple: "hsl(var(--color-purple))",
+          blue: "hsl(var(--color-blue))",
+          green: "hsl(var(--color-green))",
+          teal: "hsl(var(--color-teal))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

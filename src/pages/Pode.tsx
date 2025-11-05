@@ -12,7 +12,7 @@ const Pode = () => {
       level: "Beginner",
       duration: "15 min",
       lessons: 12,
-      colorClass: "bg-[hsl(25,95%,53%)]",
+      colorClass: "bg-brand-orange",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Pode = () => {
       level: "Intermediate",
       duration: "20 min",
       lessons: 8,
-      colorClass: "bg-[hsl(217,91%,60%)]",
+      colorClass: "bg-brand-blue",
     },
     {
       id: 3,
@@ -28,7 +28,7 @@ const Pode = () => {
       level: "Advanced",
       duration: "25 min",
       lessons: 15,
-      colorClass: "bg-[hsl(330,81%,60%)]",
+      colorClass: "bg-brand-pink",
     },
   ];
 
@@ -101,11 +101,22 @@ const Pode = () => {
                       <span className="hidden sm:inline">•</span>
                       <span className="whitespace-nowrap">{podcast.lessons} lessons</span>
                     </div>
+
+                    {/* Mobile CTA */}
+                    <div className="mt-3 sm:hidden">
+                      <Button className="w-full rounded-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Play className="mr-2 h-4 w-4" />
+                        Start Listening
+                      </Button>
+                    </div>
                   </div>
+
+                  {/* Desktop Icon Button */}
                   <Button
                     size="icon"
                     variant="ghost"
-                    className="rounded-full h-10 w-10 flex-shrink-0 self-end sm:self-center"
+                    className="hidden sm:inline-flex rounded-full h-10 w-10 flex-shrink-0 self-end sm:self-center"
+                    aria-label={`Play ${podcast.title}`}
                   >
                     <Play className="h-5 w-5" />
                   </Button>
