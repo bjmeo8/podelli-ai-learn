@@ -14,7 +14,12 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "system-ui", "sans-serif"],
+        display: ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "system-ui", "sans-serif"],
+      },
+      fontSize: {
+        'hero': ['4rem', { lineHeight: '1.1', fontWeight: '700' }],
+        'display': ['3rem', { lineHeight: '1.2', fontWeight: '700' }],
       },
       colors: {
         border: "hsl(var(--border))",
