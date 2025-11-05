@@ -14,12 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "system-ui", "sans-serif"],
-        display: ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "Inter", "system-ui", "sans-serif"],
-      },
-      fontSize: {
-        'hero': ['4rem', { lineHeight: '1.1', fontWeight: '700' }],
-        'display': ['3rem', { lineHeight: '1.2', fontWeight: '700' }],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -46,15 +41,6 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-        },
-        brand: {
-          orange: "hsl(var(--color-orange))",
-          yellow: "hsl(var(--color-yellow))",
-          pink: "hsl(var(--color-pink))",
-          purple: "hsl(var(--color-purple))",
-          blue: "hsl(var(--color-blue))",
-          green: "hsl(var(--color-green))",
-          teal: "hsl(var(--color-teal))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
