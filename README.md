@@ -1,73 +1,123 @@
-# Welcome to your Lovable project
+# Podelli - AI-Powered Language Learning
 
-## Project info
+A beautiful, standalone web application for language learning with AI-powered content, podcasts, and gamification.
 
-**URL**: https://lovable.dev/projects/25ca4615-38b6-4d8d-85dd-b40859c52768
+## 🚀 Quick Start
 
-## How can I edit this code?
+**No installation required!** Simply open `index.html` in any modern web browser.
 
-There are several ways of editing your application.
+```bash
+# Option 1: Double-click index.html in your file explorer
 
-**Use Lovable**
+# Option 2: Open from command line (macOS)
+open index.html
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/25ca4615-38b6-4d8d-85dd-b40859c52768) and start prompting.
+# Option 2: Open from command line (Linux)
+xdg-open index.html
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Option 2: Open from command line (Windows)
+start index.html
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+podelli-ai-learn/
+├── index.html          # Main HTML file (includes TailwindCSS CDN)
+├── app.js             # Complete application logic (routing, components, pages)
+├── public/            # Static assets
+│   ├── favicon.ico
+│   ├── robots.txt
+│   └── placeholder.svg
+└── README.md          # This file
+```
 
-**Use GitHub Codespaces**
+## ✨ Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **100% Standalone** - No npm, no build process, no dependencies
+- **TailwindCSS via CDN** - Modern styling without installation
+- **Single Page Application** - Client-side routing with History API
+- **4 Main Pages**:
+  - 🏠 **Home** - Landing page with features and stats
+  - 🎧 **Pode** - Podcast content library
+  - 🎮 **Play** - Interactive language games
+  - 👤 **Account** - User profile and settings
 
-## What technologies are used for this project?
+## 🛠️ Technologies
 
-This project is built with:
+- **HTML5** - Semantic markup
+- **TailwindCSS 3.x** - Utility-first CSS framework (CDN)
+- **Vanilla JavaScript** - No frameworks, pure ES6+
+- **History API** - Client-side routing
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Design System
 
-## How can I deploy this project?
+The application uses a cohesive design system with:
+- Custom color palette (HSL-based)
+- Smooth animations (fade-in, scale-in)
+- Responsive design (mobile-first)
+- Accessible UI components
 
-Simply open [Lovable](https://lovable.dev/projects/25ca4615-38b6-4d8d-85dd-b40859c52768) and click on Share -> Publish.
+## 📱 Browser Support
 
-## Can I connect a custom domain to my Lovable project?
+Works in all modern browsers:
+- Chrome/Edge 90+
+- Firefox 88+
+- Safari 14+
+- Opera 76+
 
-Yes, you can!
+## 🔧 Development
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Local Development
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+For local development with live reload, you can use any simple HTTP server:
+
+```bash
+# Python 3
+python -m http.server 8080
+
+# Python 2
+python -m SimpleHTTPServer 8080
+
+# Node.js (if you have it)
+npx http-server -p 8080
+
+# PHP
+php -S localhost:8080
+```
+
+Then open http://localhost:8080 in your browser.
+
+### Integration with FastAPI
+
+This frontend is designed to work with a FastAPI backend. Simply:
+
+1. Serve these static files from your FastAPI app
+2. Add API endpoints as needed
+3. Update `app.js` to call your API endpoints
+
+Example FastAPI integration:
+
+```python
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+
+app = FastAPI()
+
+# Serve static files
+app.mount("/public", StaticFiles(directory="public"), name="public")
+
+# Serve index.html for all routes (SPA)
+@app.get("/{full_path:path}")
+async def serve_spa(full_path: str):
+    return FileResponse("index.html")
+```
+
+## 📝 License
+
+© 2024 Podelli. All rights reserved.
+
+## 👥 Team
+
+Developed with ❤️ by the Podelli team.

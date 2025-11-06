@@ -18,10 +18,120 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Podelli" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- TailwindCSS Configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              border: 'hsl(0 0% 89%)',
+              input: 'hsl(0 0% 89%)',
+              ring: 'hsl(0 0% 0%)',
+              background: 'hsl(0 0% 100%)',
+              foreground: 'hsl(0 0% 0%)',
+              primary: {
+                DEFAULT: 'hsl(0 0% 0%)',
+                foreground: 'hsl(0 0% 100%)',
+              },
+              secondary: {
+                DEFAULT: 'hsl(0 0% 97%)',
+                foreground: 'hsl(0 0% 0%)',
+              },
+              destructive: {
+                DEFAULT: 'hsl(0 84% 60%)',
+                foreground: 'hsl(0 0% 100%)',
+              },
+              muted: {
+                DEFAULT: 'hsl(0 0% 96%)',
+                foreground: 'hsl(0 0% 40%)',
+              },
+              accent: {
+                DEFAULT: 'hsl(164 86% 45%)',
+                foreground: 'hsl(0 0% 100%)',
+              },
+              card: {
+                DEFAULT: 'hsl(0 0% 100%)',
+                foreground: 'hsl(0 0% 0%)',
+              },
+            },
+            borderRadius: {
+              lg: '1.5rem',
+              md: '1.25rem',
+              sm: '1rem',
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': {
+                  opacity: '0',
+                  transform: 'translateY(10px)',
+                },
+                '100%': {
+                  opacity: '1',
+                  transform: 'translateY(0)',
+                },
+              },
+              'scale-in': {
+                '0%': {
+                  transform: 'scale(0.95)',
+                  opacity: '0',
+                },
+                '100%': {
+                  transform: 'scale(1)',
+                  opacity: '1',
+                },
+              },
+            },
+            animation: {
+              'fade-in': 'fade-in 0.5s ease-out',
+              'scale-in': 'scale-in 0.3s ease-out',
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+      * {
+        border-color: hsl(0 0% 89%);
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+      }
+
+      .shadow-soft {
+        box-shadow: 0 2px 16px -4px rgba(0, 0, 0, 0.06);
+      }
+
+      .shadow-medium {
+        box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1);
+      }
+
+      .transition-smooth {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="bg-background text-foreground">
     <div id="root"></div>
-    <script type="module" src="/src/app.js"></script>
+
+    <!-- Application JavaScript -->
+    <script src="app.js"></script>
   </body>
 </html>
