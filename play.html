@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play - Podelli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            border: 'hsl(0 0% 89%)', background: 'hsl(0 0% 100%)', foreground: 'hsl(0 0% 0%)',
+            primary: { DEFAULT: 'hsl(0 0% 0%)', foreground: 'hsl(0 0% 100%)' },
+            secondary: { DEFAULT: 'hsl(0 0% 97%)', foreground: 'hsl(0 0% 0%)' },
+            muted: { DEFAULT: 'hsl(0 0% 96%)', foreground: 'hsl(0 0% 40%)' },
+            accent: { DEFAULT: 'hsl(164 86% 45%)', foreground: 'hsl(0 0% 100%)' },
+          },
+          keyframes: {
+            'fade-in': { '0%': { opacity: '0', transform: 'translateY(10px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            'scale-in': { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+          },
+          animation: { 'fade-in': 'fade-in 0.5s ease-out', 'scale-in': 'scale-in 0.3s ease-out' },
+        },
+      },
+    }
+  </script>
+  <style>
+    * { border-color: hsl(0 0% 89%); }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+    .shadow-soft { box-shadow: 0 2px 16px -4px rgba(0, 0, 0, 0.06); }
+    .shadow-medium { box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1); }
+    .transition-smooth { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  </style>
+</head>
+<body class="bg-background text-foreground">
+  <header class="bg-background border-b border-border sticky top-0 z-40 shadow-soft">
+    <div class="max-w-lg mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+            <svg class="h-5 w-5 text-primary-foreground" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+          </div>
+          <h1 class="text-2xl font-bold">Podelli</h1>
+        </div>
+        <span class="text-xs font-bold px-3 py-1.5 bg-primary text-primary-foreground rounded-full">AI POWERED</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-lg mx-auto px-6 pt-8 pb-24">
+    <div class="space-y-6 animate-fade-in">
+      <div>
+        <h2 class="text-4xl font-bold mb-2">Play & Learn</h2>
+        <p class="text-muted-foreground">Master languages through interactive games</p>
+      </div>
+
+      <div class="p-6 rounded-3xl bg-gradient-to-br from-accent/20 to-accent/5 border-2 border-accent/20">
+        <div class="text-center space-y-2">
+          <div class="text-5xl font-bold text-accent">2,450</div>
+          <p class="text-sm text-muted-foreground">Total Points</p>
+          <div class="flex justify-center gap-8 pt-4">
+            <div><div class="text-2xl font-bold">12</div><div class="text-xs text-muted-foreground">Games Played</div></div>
+            <div><div class="text-2xl font-bold">8</div><div class="text-xs text-muted-foreground">Achievements</div></div>
+            <div><div class="text-2xl font-bold">5</div><div class="text-xs text-muted-foreground">Day Streak</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-3xl border-2 bg-secondary">
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="h-5 w-5 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+          <span class="text-sm font-semibold text-accent">DAILY CHALLENGE</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Vocabulary Sprint</h3>
+        <p class="text-muted-foreground mb-4">Complete 20 word matches in under 2 minutes</p>
+        <button class="w-full rounded-full bg-accent hover:bg-accent/90 text-accent-foreground h-10 px-4 py-2 font-medium transition-smooth">Start Challenge</button>
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="text-xl font-bold">All Games</h3>
+        <div class="p-5 rounded-3xl border-2 hover:shadow-medium transition-smooth cursor-pointer animate-scale-in bg-white" style="animation-delay: 0ms">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-[hsl(48,96%,53%)] flex items-center justify-center flex-shrink-0">
+              <svg class="h-8 w-8 text-white/90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-bold mb-1">Word Match</h4>
+              <p class="text-sm text-muted-foreground mb-2">Match words with their translations</p>
+              <div class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                <span class="text-sm font-semibold text-accent">250 pts</span>
+              </div>
+            </div>
+            <button class="h-9 px-3 text-sm rounded-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-smooth">Play</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-3xl border-2 hover:shadow-medium transition-smooth cursor-pointer animate-scale-in bg-white" style="animation-delay: 100ms">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-[hsl(271,76%,53%)] flex items-center justify-center flex-shrink-0">
+              <svg class="h-8 w-8 text-white/90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-bold mb-1">Story Builder</h4>
+              <p class="text-sm text-muted-foreground mb-2">Create sentences from vocabulary</p>
+              <div class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                <span class="text-sm font-semibold text-accent">500 pts</span>
+              </div>
+            </div>
+            <button class="h-9 px-3 text-sm rounded-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-smooth">Play</button>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-3xl border-2 hover:shadow-medium transition-smooth cursor-pointer animate-scale-in bg-white" style="animation-delay: 200ms">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-2xl bg-[hsl(142,76%,36%)] flex items-center justify-center flex-shrink-0">
+              <svg class="h-8 w-8 text-white/90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <div class="flex-1">
+              <h4 class="font-bold mb-1">Speed Challenge</h4>
+              <p class="text-sm text-muted-foreground mb-2">Race against time to answer</p>
+              <div class="flex items-center gap-2">
+                <svg class="h-4 w-4 text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                <span class="text-sm font-semibold text-accent">1000 pts</span>
+              </div>
+            </div>
+            <button class="h-9 px-3 text-sm rounded-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium transition-smooth">Play</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-background border-t border-border z-50 shadow-medium">
+    <div class="max-w-lg mx-auto px-4">
+      <div class="flex items-center justify-around py-2">
+        <a href="home.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-xl transition-smooth text-muted-foreground hover:text-foreground"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span class="text-xs font-medium">Home</span></a>
+        <a href="pode.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-xl transition-smooth text-muted-foreground hover:text-foreground"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16.85 18.58a9 9 0 1 0-9.7 0"/><path d="M8 14a5 5 0 1 1 8 0"/><circle cx="12" cy="11" r="1"/><path d="M13 17a1 1 0 1 0-2 0l.5 4.5a.5.5 0 1 0 1 0Z"/></svg><span class="text-xs font-medium">Pode</span></a>
+        <a href="play.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-xl transition-smooth text-accent"><svg class="h-6 w-6 scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="text-xs font-medium">Play</span></a>
+        <a href="account.html" class="flex flex-col items-center gap-1 py-2 px-4 rounded-xl transition-smooth text-muted-foreground hover:text-foreground"><svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="text-xs font-medium">Account</span></a>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
